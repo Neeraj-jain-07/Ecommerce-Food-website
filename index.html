@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Food Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Roboto", sans-serif;
+        }
+
+        header {
+            box-shadow: 0.5px 0.5px 10px;
+            position: sticky;
+            width: 100vw;
+            top: 0px;
+            background: white;
+            z-index: 2;
+        }
+
+        .main-content {
+            max-width: 1400px;
+            margin: 0px auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav ul:nth-child(1) {
+            padding: 7px 30px;
+        }
+
+        nav ul:nth-child(2) {
+            display: grid;
+            place-items: center;
+            width: 120px;
+        }
+
+        nav ul img {
+            width: 70px;
+            border-radius: 50%;
+            box-shadow: 2px 1px 2px rgba(1, 2, 1, 0.4);
+        }
+
+        nav ul i {
+            font-size: 35px;
+            color: red;
+            cursor: pointer;
+        }
+
+        .sec1 {
+            /* background-color: red; */
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .sec1 img {
+            width: 500px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 39%;
+        }
+
+        .tag {
+            background: green;
+            align-self: flex-start;
+            gap: 20px;
+            padding: 8px 10px;
+            color: white;
+        }
+
+        .content h1 {
+            font-size: 72px;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        .content button {
+            background: #ffc066;
+            align-self: flex-start;
+            padding: 10px 15px;
+            border: none;
+            transition: 0.2s ease-in-out;
+        }
+
+        .content button:hover {
+            background: #e19a36;
+        }
+
+        .s-container {
+            display: flex;
+            gap: 20px;
+            /* background-color: green; */
+            margin: 90px 50px;
+        }
+
+        .feature {
+            /* background-color: cyan; */
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: .3s ease-in-out;
+            padding:24px 8px;
+        }
+
+        .feature:hover {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5px;
+        }
+
+        .feature img {
+            width: 130px;
+            height: 130px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0px;
+        }
+
+        .menu p {
+            align-self: flex-start;
+            background-color: green;
+            padding: 6px 8px;
+            color: white;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .grid {
+            max-width: 900px;
+            margin: 50px auto;
+            display: grid;
+            gap: 10px;
+            grid-template-areas: "i1 i1 i2 i3"
+                "i1 i1 i2 i4"
+                "i5 i6 i7 i4";
+            padding: 0px 10px;
+
+        }
+
+        .grid img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .grid>div img {
+            border-radius: 10px;
+        }
+
+        .grid>div {
+            transition: 0.2s ease-in-out;
+        }
+
+        .grid>div:hover {
+            transform: scale(1.05);
+        }
+
+        .item1 {
+            grid-area: i1;
+            /* background-color: green; */
+        }
+
+
+
+        .item2 {
+            grid-area: i2;
+            /* background-color: yellow; */
+        }
+
+
+
+        .item3 {
+            grid-area: i3;
+            /* background-color: pink; */
+        }
+
+        .item4 {
+            grid-area: i4;
+            /* background-color: red; */
+        }
+
+
+
+        .item5 {
+            grid-area: i5;
+            /* background-color: aqua; */
+        }
+
+        .item6 {
+            grid-area: i6;
+            /* background-color: tan; */
+        }
+
+        .item7 {
+            grid-area: i7;
+            /* background-color: teal; */
+        }
+
+        footer {
+            background-color: pink;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        li:hover {
+            color: red;
+        }
+
+        .footer {
+            display: flex;
+            gap: 40px;
+            margin: 0 20px;
+            justify-content: space-between;
+            padding: 0px 36px;
+            max-width: 1200px;
+            margin: 0px auto;
+        }
+
+        .logo img {
+            width: 190px;
+        }
+
+        .mg-b {
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+
+        .mg-t {
+            margin-top: 10px;
+        }
+
+        .support2 input[type="email"] {
+            padding: 3px 5px;
+            outline: none;
+            border: 1.5px solid grey;
+        }
+
+        .support2 input[type="email"]:focus {
+            border-color: rgb(90, 88, 88);
+        }
+
+
+
+        .f-ch h3 {
+            color: gray;
+        }
+
+        .support2 .icons {
+            font-size: 35px;
+            margin-top: 3px;
+            cursor: pointer;
+            display: flex;
+            gap: 9px;
+        }
+
+
+
+
+        .icon:hover {
+            color: red;
+        }
+
+        @media (max-width:822px) {
+            .sec1 {
+                gap: 0px;
+
+            }
+
+            .content h1 {
+                font-size: 60px;
+            }
+
+            .s-container {
+                margin: 49px 16px;
+            }
+            .feature{
+                padding: 24px 0px;
+            }
+        }
+
+        @media (max-width:780px) {
+            .sec1 {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .content {
+                width: 100%;
+                padding: 10px 20px;
+
+            }
+
+            .content h1 {
+                font-size: 40px;
+            }
+
+            .s-container {
+                flex-direction: column;
+                margin: 90px 10px;
+                padding: 20px;
+            }
+
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                gap: 0px;
+            }
+
+
+
+            .grid img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        @media (max-width:498px) {
+            .sec1 img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <img src="img.png" alt="" class="logo">
+            </ul>
+            <ul>
+                <i class="fa-sharp fa-solid fa-bars"></i>
+            </ul>
+        </nav>
+    </header>
+    <br>
+
+    <!-- Main-content     -->
+    <!-- First Section -->
+
+    <div class="main-content">
+        <section>
+            <div class="sec1">
+                <div class="img">
+                    <img src="thali.jpg" alt="">
+                </div>
+                <div class="content">
+                    <div class="tag">50% Off on All Products</div>
+                    <h1>Enjoy Your Delicious Day</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, iste corporis tempore
+                        necessitatibus inventore ex?</p>
+                    <button>Explore Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Second Section -->
+
+        <section class="s-container">
+            <div class="feature">
+                <img src="feature1c.png" alt="">
+                <div class="s-content">
+                    <h3>Discount Voucher</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quo?</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <img src="feature2c.png" alt="">
+                <div class="s-content">
+                    <h3>Fresh Healthy Food</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quo?</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <img src="feature3c.png" alt="">
+                <div class="s-content">
+                    <h3>Fast Home Delivery</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quo?</p>
+                </div>
+            </div>
+        </section>
+
+
+        <hr class="main-content">
+
+        <section class="t-section">
+            <div class="menu">
+                <p>Our Menu</p>
+            </div>
+
+            <div class="heading">
+                <h3>Explore Our Menu</h3>
+            </div>
+            <div class="grid">
+                <div class="item1">
+                    <img src="img/food1.jpg" alt="">
+                </div>
+
+                <div class="item2">
+                    <img src="img/food2.jpg" alt="">
+                </div>
+
+                <div class="item3">
+                    <img src="img/food3.jpg" alt="">
+                </div>
+
+                <div class="item4">
+                    <img src="img/food4.jpg" alt="">
+                </div>
+
+                <div class="item5">
+                    <img src="img/food5.jpg" alt="">
+                </div>
+
+                <div class="item6">
+                    <img src="img/food6.jpg" alt="">
+                </div>
+
+                <div class="item7">
+                    <img src="img/food7.jpg" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="main-content footer">
+            <div class="logo f-ch">
+                <img src="logo.png" alt="">
+            </div>
+
+            <div class="main-link f-ch">
+                <h3 class="mg-b">Main link</h3>
+                <ul>
+                    <li>Order Tracking</li>
+                    <li> New Order</li>
+                    <li> Contact Us</li>
+                    <li>News & Blogs</li>
+                </ul>
+            </div>
+
+            <div class="support1 f-ch">
+                <h3 class="mg-b"> Support </h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditons</li>
+                </ul>
+            </div>
+
+            <div class="support2 f-ch">
+                <h3 class="mg-b">Support</h3>
+                <input type="email" placeholder="Enter Your email">
+                <h3 class="mg-t">follow Us</h3>
+                <div class="icons">
+                    <div class="icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-brands fa-twitter"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
